@@ -21,8 +21,10 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/cf-sf-apex-cache-builder:latest .
+          docker build -t ghcr.io/${{ github.repository }}/cf-sf-apex-cache-builder:latest \
+                       -t ghcr.io/${{ github.repository }}/cf-sf-apex-cache-builder:${{ github.sha }} .
 
       - name: Push Docker images
         run: |
           docker push ghcr.io/${{ github.repository }}/cf-sf-apex-cache-builder:latest
+          docker push ghcr.io/${{ github.repository }}/cf-sf-apex-cache-builder:${{ github.sha }}
