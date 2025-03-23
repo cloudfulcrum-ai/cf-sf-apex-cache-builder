@@ -1,8 +1,9 @@
 name: Build & Push to GHCR
+
 on:
   push:
     branches:
-      - main  # Only trigger on main branch updates
+      - main  # Trigger on main branch updates
 
 jobs:
   build-and-push:
@@ -20,7 +21,7 @@ jobs:
 
       - name: Build and tag Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/cf-sf-apex-cache-builder:latest
+          docker build -t ghcr.io/${{ github.repository }}/cf-sf-apex-cache-builder:latest .
 
       - name: Push Docker images
         run: |
