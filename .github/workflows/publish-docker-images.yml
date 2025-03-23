@@ -5,7 +5,7 @@ on:
     branches:
       - main  # Run only on pushes to main
     paths:
-      - "cf-sf-*/**"  # Trigger only if specific action folders change
+      - "cf-sf-apex-cache-builder"  # Trigger only if specific action folders change
 
 jobs:
   build-and-push:
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        action: [cf-sf-lean-packager, cf-sf-smart-deploy, cf-sf-deploy-dynamic-apex, cf-sf-apex-cache-builder, cf-sf-secure-quality-gate]
+        action: [cf-sf-apex-cache-builder]
 
     steps:
       - name: Checkout repository
