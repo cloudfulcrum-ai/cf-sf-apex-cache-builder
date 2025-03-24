@@ -1,5 +1,7 @@
 # Apex Cache Builder
 
+    This repository contain GitHub Action designed to execute Salesforce Apex Test classes and creates mapping for class vs test classes. The action is packaged as a Docker container and provides a specialized function.
+    
 **cf-sf-apex-cache-builder**
 
     Builds and caches Apex-related artifacts to optimize deployments.
@@ -10,7 +12,7 @@
 Usage Example:
 
     - name: Build Apex Cache
-      uses: ghcr.io/itfulcrum/cf-sf-apex-cache-builder@latest
+      uses: ghcr.io/cloudfulcrum-ai/cf-sf-apex-cache-builder@latest
       with:
       cache-key: "apex-build-cache"
 
